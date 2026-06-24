@@ -23,10 +23,10 @@ Criar uma conta bancária capaz de realizar as seguintes operações:
 - [x] Consultar cheque especial
 - [x] Depositar dinheiro
 - [x] Sacar dinheiro
-- [ ] Pagar boleto
-- [ ] Verificar uso do cheque especial
-- [ ] Menu interativo
-- [ ] Encerrar aplicação
+- [x] Pagar boleto
+- [x] Verificar uso do cheque especial
+- [x] Menu interativo
+- [x] Encerrar aplicação
 
 ## Conceitos Praticados
 

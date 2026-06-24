@@ -63,7 +63,7 @@ public class Main {
 
                 } else {
                     account1.setBalance(account1.getBalance() - withdraw);
-                    System.out.printf("Saque efetuado com sucesso! Saldo atual: R$ %s\n", account1.getBalance());
+                    System.out.printf("Saque efetuado com sucesso! \nSaldo atual: R$ %s\n", account1.getBalance());
                 }
 
             } else if (Answer == 5) {
@@ -84,6 +84,18 @@ public class Main {
                     System.out.printf("Boleto pago com sucesso! Saldo atual: R$ %s\n", account1.getBalance());
                 }
 
+            } else if (Answer == 6) {
+                if (account1.getDebt() > 0){
+                    System.out.printf("Você possui dívidas com o cheque especial!\nValor da dívida: R$ %s\n", account1.getDebt());
+                } else {
+                    System.out.println("Você não possui dívidas com o cheque especial no momento!");
+                }
+
+            } else if (Answer == 0) {
+                System.out.println("Encerrando...");
+                break;
+            } else {
+                System.out.println("Opção inválida!!!");
             }
 
 

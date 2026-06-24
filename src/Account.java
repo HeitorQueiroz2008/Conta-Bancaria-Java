@@ -1,10 +1,7 @@
 
 
 public class Account {
-
-    //variáveis da classe
-
-
+    
     private String name;
 
     private double balance;
