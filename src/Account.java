@@ -11,6 +11,8 @@ public class Account {
 
     private double specialCheck;
 
+    private double limit;
+
 
     //setters e getter
     public void setName(String name) {
@@ -35,6 +37,14 @@ public class Account {
 
     public double getSpecialCheck() {
         return specialCheck;
+    }
+
+    public double getLimit() {
+        return limit;
+    }
+
+    public void setLimit(double limit) {
+        this.limit = limit;
     }
 
     //builder
