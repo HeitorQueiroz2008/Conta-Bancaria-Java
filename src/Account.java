@@ -13,6 +13,8 @@ public class Account {
 
     private double limit;
 
+    private double debt;
+
 
     //setters e getter
     public void setName(String name) {
@@ -39,12 +41,21 @@ public class Account {
         return specialCheck;
     }
 
+    public void setLimit(double limit) {
+        this.limit = limit;
+    }
+
     public double getLimit() {
         return limit;
     }
 
-    public void setLimit(double limit) {
-        this.limit = limit;
+
+    public void setDebt(double debt) {
+        this.debt = debt;
+    }
+
+    public double getDebt() {
+        return debt;
     }
 
     //builder
