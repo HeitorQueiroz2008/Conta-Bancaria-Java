@@ -38,8 +38,15 @@ public class Main {
             } else if (Answer == 3) {
                 System.out.println("Qual o valor depositado?");
                 var deposite = scanner.nextDouble();
-                account1.setBalance(account1.getBalance() + deposite);
-                System.out.printf("Valor depositado!!! Saldo atual: R$ %s\n", account1.getBalance());
+                if (account1.getDebt() > 0 && deposite > account1.getDebt()){
+                    account1.setBalance(account1.getBalance() + deposite - account1.getDebt());
+                    System.out.printf("Valor da dívida foi descontado no depósito!\nValor da dívida: %s \nSaldo atual: R$ %s\n",account1.getDebt(), account1.getBalance());
+                    account1.setDebt(0);
+
+                } else {
+                    account1.setBalance(account1.getBalance() + deposite);
+                    System.out.printf("Valor depositado!!! Saldo atual: R$ %s\n", account1.getBalance());
+                }
 
             } else if (Answer == 4) {
                 System.out.println("Digite o valor que deseja sacar: ");
@@ -59,8 +66,25 @@ public class Main {
                     System.out.printf("Saque efetuado com sucesso! Saldo atual: R$ %s\n", account1.getBalance());
                 }
 
-            }
+            } else if (Answer == 5) {
+                System.out.println("Digite o valor do boleto: ");
+                var boleto = scanner.nextDouble();
 
+                if (account1.getLimit() < boleto){
+                    System.out.println("Saldo e cheque especial insuficiente!");
+
+                } else if (account1.getBalance() < boleto){
+                    account1.setDebt(Math.abs(account1.getBalance() - boleto) * 1.2);
+                    account1.setSpecialCheck(account1.getSpecialCheck() + (account1.getBalance() - boleto));
+                    account1.setBalance(0);
+                    System.out.printf("Seu cheque especial foi utilizado!\nSaldo atual: R$ %s \nValor restante do cheque especial: R$ %s \nValor da dívida: R$ %s\n", account1.getBalance(),account1.getSpecialCheck(),account1.getDebt());
+
+                } else {
+                    account1.setBalance(account1.getBalance() - boleto);
+                    System.out.printf("Boleto pago com sucesso! Saldo atual: R$ %s\n", account1.getBalance());
+                }
+
+            }
 
 
         }
