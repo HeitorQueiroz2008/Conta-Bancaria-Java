@@ -19,9 +19,9 @@ Criar uma conta bancária capaz de realizar as seguintes operações:
 
 ## Funcionalidades Implementadas
 
-- [ ] Consultar saldo
-- [ ] Consultar cheque especial
-- [ ] Depositar dinheiro
+- [x] Consultar saldo
+- [x] Consultar cheque especial
+- [x] Depositar dinheiro
 - [ ] Sacar dinheiro
 - [ ] Pagar boleto
 - [ ] Verificar uso do cheque especial
